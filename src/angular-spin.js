@@ -4,6 +4,9 @@
         .directive('spin', function () {
             return {
                 restrict: 'A',
+                transclude:true,
+                replace:true,
+                template: '<div ng-transclude></div>',
                 scope: {
                     config: "=spin",
                     spinif: "=spinIf"
