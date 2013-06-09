@@ -37,6 +37,9 @@
                         });
                     }
 
+                    scope.$on('$destroy', function() {
+                        spinner.stop();
+                    });
                 }
             }
         });
