@@ -18,3 +18,10 @@ or
     <div spin="config" spin-if="spinif"></div>
 </div>
 ```
+
+Enhancements in 0.1.2
+---------------------
+
+Will take the foreground color of the host element if none is specified in the config, like the jQuery plugin version.
+
+You can specify `hideElement: true` in the config and it will cause the host element to hide when the spinner stops (via `spin-if`).
