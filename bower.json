@@ -1,6 +1,6 @@
 {
     "name": "angular-spin",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "main": "src/angular-spin.js",
     "ignore": [
         "**/.*",
