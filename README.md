@@ -19,8 +19,8 @@ or
 </div>
 ```
 
-Enhancements in 0.1.2
----------------------
+Enhancements in 0.1.2+
+----------------------
 
 Is now a UMD module for AMD or browser globals. Spin.js is so it is easier to use this with AMD now.
 

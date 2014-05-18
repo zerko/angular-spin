@@ -8,11 +8,21 @@
     'use strict';
     angular.module('spin.js', [])
         .directive('spin', function () {
-            var augmentOpts = function (color, opts) {
-                if (!opts.color) {
-                    opts.color = color;
-                }
-            };
+            var getColor = function (el) {
+                    var color;
+                    el = el[0];
+                    if (window.getComputedStyle) {
+                        color = window.getComputedStyle(el, null).getPropertyValue('color');
+                    } else if (document.documentElement.currentStyle) {
+                        color = el.currentStyle['color'];
+                    }
+                    return color;
+                },
+                augmentOpts = function (color, opts) {
+                    if (!opts.color) {
+                        opts.color = color;
+                    }
+                };
             return {
                 restrict: 'A',
                 transclude:true,
@@ -23,7 +33,7 @@
                     spinif: '=spinIf'
                 },
                 link: function (scope, element, attrs) {
-                    var cssColor = element.css('color'),
+                    var cssColor = element.css('color') || getColor(element),
                         stoped = false,
                         hideElement = !!scope.config.hideElement,
                         spinner;
